@@ -1,5 +1,106 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3595185624762575288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716346202589793217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b0225744486ba48a97b901e93c18a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartLevel: 1
+  m_CharacterClass: 1
+  m_Progression: {fileID: 11400000, guid: 56bef13061c92974497540dbd06d43c9, type: 2}
+  m_LevelUpFX: {fileID: 0}
+  m_ShouldUseModifiers: 1
+--- !u!114 &4620853743355196296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716346202589793217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8e0ca0a85bad2469150bee7a3b52f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeBetweenAttacks: 1
+  m_AttackSpeedModifier: 1.2
+  m_RTHandTransform: {fileID: 8545544470701994709}
+  m_LFHandTransform: {fileID: 8545544470702052055}
+  m_DefaultWeapon: {fileID: 11400000, guid: 2a50c8471b37e3245bd6cc66dd0a6546, type: 2}
+--- !u!114 &5901109393956920980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716346202589793217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8f87a17229592418735e4ba8f852be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LevelUpHealthPercent: 0
+  takeDamageEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8958839650404429743}
+        m_MethodName: Spawn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8067861759563423771}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7929699380204787975}
+        m_MethodName: WasAttacked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: RPG.Attributes.Health+TakeDamageEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDieEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3835403067258490056}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &7929699380204787975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,12 +143,12 @@ PrefabInstance:
     - target: {fileID: 6818861619939249404, guid: ef9428fb160b2b344a86b52269fd86be,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemyBase
       objectReference: {fileID: 0}
     - target: {fileID: 6818861619939249392, guid: ef9428fb160b2b344a86b52269fd86be,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.21933
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6818861619939249392, guid: ef9428fb160b2b344a86b52269fd86be,
         type: 3}
@@ -57,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 6818861619939249392, guid: ef9428fb160b2b344a86b52269fd86be,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.63196945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6818861619939249392, guid: ef9428fb160b2b344a86b52269fd86be,
         type: 3}
@@ -205,16 +306,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 257892422291195709}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1515331447058913778 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1626852963077217999, guid: ef9428fb160b2b344a86b52269fd86be,
+--- !u!82 &8067861759563423771 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7810079911616636710, guid: ef9428fb160b2b344a86b52269fd86be,
     type: 3}
   m_PrefabInstance: {fileID: 257892422291195709}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6716346202589793217}
+--- !u!82 &3835403067258490056 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3940123070132145141, guid: ef9428fb160b2b344a86b52269fd86be,
+    type: 3}
+  m_PrefabInstance: {fileID: 257892422291195709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8958839650404429743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9205365303232751762, guid: ef9428fb160b2b344a86b52269fd86be,
+    type: 3}
+  m_PrefabInstance: {fileID: 257892422291195709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd8f87a17229592418735e4ba8f852be, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a7c3e750bc71b4d956f8fcd67f60ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5544998581525587885
@@ -288,7 +401,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Health
       value: 
-      objectReference: {fileID: 1515331447058913778}
+      objectReference: {fileID: 5901109393956920980}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d02ea62fb36e96c4ca77fbbb7e9f2ac6, type: 3}
 --- !u!1001 &8545544470701573595

@@ -14,8 +14,12 @@ namespace RPG.Attributes
         // Update is called once per frame
         void Update()
         {
-            float healthpercent = m_Health.GetFractionalHealth();
-
+            float healthpercent = 0f;
+            if (m_Health != null)
+            {
+                 healthpercent = m_Health.GetFractionalHealth();
+            }
+            
             if (Mathf.Approximately(healthpercent,0) || Mathf.Approximately(healthpercent, 1))
             {
                 m_CanvasComp.enabled = false;

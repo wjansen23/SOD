@@ -31,7 +31,17 @@ namespace RPG.Movement
         // Update is called once per frame
         void Update()
         {
-            m_NavMeshAgent.enabled = !m_Health.IsDead();
+            //TODO:Update code so that NPCs don't call for the Health object.
+            //This is a temporaty fix.
+            if (m_Health != null)
+            {
+                m_NavMeshAgent.enabled = !m_Health.IsDead();
+            }
+            else
+            {
+                m_NavMeshAgent.enabled = true;
+            }
+
             UpdateAnimator();
         }
 

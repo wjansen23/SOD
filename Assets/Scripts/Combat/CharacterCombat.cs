@@ -151,6 +151,13 @@ namespace RPG.Combat
             //Hit();
         }
 
+        //Cancel attacking animation
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger(ATTACK_TRIGGER);
+            GetComponent<Animator>().SetTrigger(STOP_ATTACK_TRIGGER);
+        }
+
         //Stop the current attack behavoir
         public void Cancel()
         {
@@ -164,19 +171,12 @@ namespace RPG.Combat
             m_Target = null;
         }
 
-        //Cancel attacking animation
-        private void StopAttack()
-        {
-            GetComponent<Animator>().ResetTrigger(ATTACK_TRIGGER);
-            GetComponent<Animator>().SetTrigger(STOP_ATTACK_TRIGGER);
-        }
-
         //Is the current target select something that can be attacked
         public bool CanAttack(GameObject target)
         {
             //Check if target is null
             if (target == null) { return false; }
-            if (!GetComponent<Mover>().CanMoveTo(target.transform.position) && !InWeaponRange(target.transform)) return false;
+            if (!GetComponent<Mover>().CanMoveTo(target.transform.position) && !InWeaponRange(target.transform)) { return false; }
 
             //Check if target is alive
             Health targetHealth = target.GetComponent<Health>();

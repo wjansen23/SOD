@@ -176,9 +176,6 @@ GameObject:
   - component: {fileID: 6818861619939249395}
   - component: {fileID: 8591112189611991520}
   - component: {fileID: 4478967341606998249}
-  - component: {fileID: 1094194700475558704}
-  - component: {fileID: 1626852963077217999}
-  - component: {fileID: 4459031886078417892}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -351,96 +348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50db12886560af4b9543adf2dd798a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1094194700475558704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6818861619939249404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8e0ca0a85bad2469150bee7a3b52f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TimeBetweenAttacks: 1
-  m_AttackSpeedModifier: 1.2
-  m_RTHandTransform: {fileID: 0}
-  m_LFHandTransform: {fileID: 0}
-  m_DefaultWeapon: {fileID: 0}
---- !u!114 &1626852963077217999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6818861619939249404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd8f87a17229592418735e4ba8f852be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LevelUpHealthPercent: 0.7
-  takeDamageEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9205365303232751762}
-        m_MethodName: Spawn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7810079911616636710}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: RPG.Attributes.Health+TakeDamageEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onDieEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3940123070132145141}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &4459031886078417892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6818861619939249404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b0225744486ba48a97b901e93c18a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartLevel: 1
-  m_CharacterClass: 1
-  m_Progression: {fileID: 11400000, guid: 56bef13061c92974497540dbd06d43c9, type: 2}
-  m_LevelUpFX: {fileID: 0}
-  m_ShouldUseModifiers: 0
 --- !u!1 &9151954273529976504
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,15 +550,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4066383062309403965}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9205365303232751762 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5165267175597479343, guid: 73067397d8dcac147a03060ef88c8223,
-    type: 3}
-  m_PrefabInstance: {fileID: 4066383062309403965}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2a7c3e750bc71b4d956f8fcd67f60ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

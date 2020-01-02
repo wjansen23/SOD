@@ -23,7 +23,7 @@ namespace RPG.Control
 
         [SerializeField] CursorMapping[] m_CursorMappings = null;
         [SerializeField] float m_MaxNavMeshProjectionDistance = 1f;
-        [SerializeField] float m_RayCastRadius = 1f;
+        [SerializeField] float m_RayCastRadius = .5f;
 
 
         void Awake()
@@ -41,7 +41,7 @@ namespace RPG.Control
                 return;
             }
 
-            if (InteractWithComponent()) return;
+            if (InteractWithPickup()) return;
             if (InteractWithMovement()) return;
             SetCurosor(CursorType.None);
         }
@@ -58,7 +58,7 @@ namespace RPG.Control
         }
 
         //Checks to see if the mouse is over a gameobject with the IRaycastable interface implemented
-        private bool InteractWithComponent()
+        private bool InteractWithPickup()
         {
             //Get list of raycast hits.
             RaycastHit[] raycastHits = RaycastAllSorted();
@@ -71,6 +71,13 @@ namespace RPG.Control
                     if (raycastable.HandleRaycast(this))
                     {
                         SetCurosor(raycastable.GetCursorType());
+
+                        //If player left mouse clicks on the pickup, then move the player to the pickup
+                        if (Input.GetMouseButton(0))
+                        {
+                            InteractWithMovement();
+                        }
+
                         return true;
                     }
                 }
@@ -96,10 +103,6 @@ namespace RPG.Control
         //Handles determining whether a player should move to point clicked
         private bool InteractWithMovement()
         {
-            //RaycastHit raycastHit;
-
-            ////See if Ray hit something
-            //bool hasHit = Physics.Raycast(GetMouseRay(), out raycastHit);
             Vector3 target;
 
             //Raycast to the nav mesh

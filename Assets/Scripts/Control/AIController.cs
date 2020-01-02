@@ -9,6 +9,7 @@ using System;
 namespace RPG.Control
 {
     //This class is responsible for controll AI behavoir in the game.
+    //TODO: See if there is a better way to deal with "Endless Aggroing" within mobs
 
     public class AIController : MonoBehaviour
     {
@@ -25,6 +26,7 @@ namespace RPG.Control
         static string PLAYER_TAG = "Player";
 
         //Used to control PATROL, CHASE and LOOK AROUND behavoirs
+        bool m_AlreadyAggro = false;
         float m_TimeSinceLastSawPlayer = Mathf.Infinity;
         float m_TimeSinceWaypointReached = Mathf.Infinity;
         float m_TimeSinceAggrevated = Mathf.Infinity;
@@ -48,6 +50,7 @@ namespace RPG.Control
             m_guardPosition = new LazyValue<Vector3>(SetInitialGuardPosition);
         }
 
+        //Set base position for AI within the scene
         private Vector3 SetInitialGuardPosition()
         {
             return transform.position;
@@ -69,7 +72,7 @@ namespace RPG.Control
             //Check if AI should return to its guard/orignal starting point
             if (IsAggrevated() && m_characterCombat.CanAttack(m_TargetPlayer))
             {
-                AttackBehavoir();
+                    AttackBehavoir();
             }
             else if (m_TimeSinceLastSawPlayer<m_SuspicionTime)
             {
@@ -77,16 +80,14 @@ namespace RPG.Control
             }
             else
             {
+                //reset aggro flag here to prevent endless chasing due to mobs continiously invoking aggro on each other
+                m_AlreadyAggro = false;
                 PatrolBehavoir();
             }
             UpdateTimers();
         }
 
-        public void Aggrevate()
-        {
-            m_TimeSinceAggrevated = 0;
-        }
-
+        //Update all the behavoir timers
         private void UpdateTimers()
         {
             m_TimeSinceLastSawPlayer += Time.deltaTime;
@@ -143,7 +144,8 @@ namespace RPG.Control
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
-        //Logic for AI to guard
+        //Logic for AI to guard 
+        //NOT CURRENTLY USED
         private void GuardBehavoir()
         {
             //Move AI to its static guard position
@@ -155,10 +157,10 @@ namespace RPG.Control
         {
             m_TimeSinceLastSawPlayer = 0;
             m_characterCombat.Attack(m_TargetPlayer.gameObject);
-
             AggrevateNearbyEnemies();
         }
 
+        //Cause all nearby enemies in a radius to aggro as well
         private void AggrevateNearbyEnemies()
         {
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, m_AlertDistance, Vector3.up, 0);
@@ -166,17 +168,35 @@ namespace RPG.Control
             foreach(RaycastHit hit in hits)
             {
                 AIController ai = hit.transform.GetComponent<AIController>();
+
+                //Don't try to aggro a null
                 if (ai == null) continue;
+
+                //Don't aggro yourself
+                if (ai == GetComponent<AIController>()) continue;               
 
                 ai.Aggrevate();
             }
         }
 
-        //Is player within the chase radius
+        //Aggro on to the player
+        public void Aggrevate()
+        {
+            //If already in aggro to not reset the timer.  This is to prevent the timer from endlessly resetting in a mob
+            if (!m_AlreadyAggro)
+            {
+                m_TimeSinceAggrevated = 0;
+                m_AlreadyAggro = true;
+            }
+        }
+
+        //Is the AI aggrivated or the player within the chase radius
         private bool IsAggrevated()
         {
+            if (Vector3.Distance(transform.position, m_TargetPlayer.transform.position) <= m_chaseDistance) return true;
             if (m_TimeSinceAggrevated <= m_AggroCooldownTime) return true;
-            return Vector3.Distance(transform.position, m_TargetPlayer.transform.position)<=m_chaseDistance;
+
+            return false;
         }
 
         //Called by Unity.  For displaying an AI's chase radius.
@@ -186,5 +206,11 @@ namespace RPG.Control
             Gizmos.DrawWireSphere(transform.position, m_chaseDistance);
         }
 
+        //Respond to a player attack
+        public void WasAttacked()
+        {
+            m_TimeSinceAggrevated = 0;
+            AggrevateNearbyEnemies();
+        }
     }
 }
