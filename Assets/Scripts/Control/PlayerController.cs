@@ -41,7 +41,7 @@ namespace RPG.Control
                 return;
             }
 
-            if (InteractWithPickup()) return;
+            if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
             SetCurosor(CursorType.None);
         }
@@ -58,7 +58,7 @@ namespace RPG.Control
         }
 
         //Checks to see if the mouse is over a gameobject with the IRaycastable interface implemented
-        private bool InteractWithPickup()
+        private bool InteractWithComponent()
         {
             //Get list of raycast hits.
             RaycastHit[] raycastHits = RaycastAllSorted();
@@ -71,13 +71,6 @@ namespace RPG.Control
                     if (raycastable.HandleRaycast(this))
                     {
                         SetCurosor(raycastable.GetCursorType());
-
-                        //If player left mouse clicks on the pickup, then move the player to the pickup
-                        if (Input.GetMouseButton(0))
-                        {
-                            InteractWithMovement();
-                        }
-
                         return true;
                     }
                 }
@@ -161,6 +154,11 @@ namespace RPG.Control
                 if (mapping.type == type) return mapping;
             }
             return m_CursorMappings[0];
+        }
+
+        public void MoveToPickup()
+        {
+            InteractWithMovement();
         }
     }
 }

@@ -50,10 +50,11 @@ namespace RPG.Combat
 
         public bool HandleRaycast(PlayerController callingController)
         {
-            // if (Input.GetMouseButtonDown(0))
-            //{
-            //    Pickup(callingController.gameObject.GetComponent<CharacterCombat>());
-            //}
+            //If player left mouse clicks on the pickup, then move the player to the pickup
+            if (Input.GetMouseButton(0))
+            {
+                callingController.GetComponent<PlayerController>().MoveToPickup();
+            }
             return true;
         }
 

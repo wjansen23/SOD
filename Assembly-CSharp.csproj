@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Core\FollowCamera.cs" />
     <Compile Include="Assets\Scripts\Core\IAction.cs" />
     <Compile Include="Assets\Scripts\Core\PersistantObjectSpawner.cs" />
+    <Compile Include="Assets\Scripts\GameMapWall.cs" />
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
     <Compile Include="Assets\Scripts\Saving\SavableEntity.cs" />
