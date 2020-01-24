@@ -3,8 +3,15 @@
     public enum Stat
     {
         LevelHealth,
-        XPReward,
-        XPToLevel,
-        LevelDamage
+        LevelEnergy,
+        LevelDamage,
+        LevelSpecial,
+        LevelXP,
+        LevelStat1,
+        LevelStat2,
+        LevelStat3,
+        LevelStat4,
+        LevelStat5,
+        XPReward
     }
 }

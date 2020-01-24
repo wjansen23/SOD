@@ -16,7 +16,7 @@ MonoBehaviour:
   m_EquippedWeaponPreFab: {fileID: 4521926126930104536, guid: c62da140e919006409b7b2a5f1d0a21b,
     type: 3}
   m_WeaponRange: 1.5
-  m_WeaponDamage: 4
+  m_WeaponDamage: 0
   m_PercentageBonus: 0
   m_isRTHanded: 1
   m_Projectile: {fileID: 0}

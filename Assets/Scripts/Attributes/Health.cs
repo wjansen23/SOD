@@ -28,10 +28,13 @@ namespace RPG.Attributes
         bool m_isDead = false;
 
         BaseStats BStatComp;
+        //IBaseStatProvider BStatComp;
 
         private void Awake()
         {
             BStatComp = GetComponent<BaseStats>();
+            //BStatComp = GetComponent<IBaseStatProvider>();
+
             m_CurrentHealth = new LazyValue<float>(GetInitialHealth);
         }
 
@@ -96,6 +99,7 @@ namespace RPG.Attributes
         {
             Experience xpComp = instigator.GetComponent<Experience>();
 
+            //See if instigator has a XPcomponent signifying it can gain levels. If not just return.
             if (xpComp == null) return;
             xpComp.GainExperiece(BStatComp.GetStatValue(Stat.XPReward));
         }

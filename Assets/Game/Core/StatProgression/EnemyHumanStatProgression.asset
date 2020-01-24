@@ -10,64 +10,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 271154d418b3595409d358e559f58de3, type: 3}
-  m_Name: CharacterProgression
+  m_Name: EnemyHumanStatProgression
   m_EditorClassIdentifier: 
   m_characterClasses:
-  - m_CharacterClass: 0
+  - m_CharacterClass: 11
     stats:
     - m_Stat: 0
+      levels:
+      - 60
+      - 120
+      - 180
+      - 240
+      - 300
+    - m_Stat: 1
       levels:
       - 100
-      - 200
-      - 350
-      - 500
-      - 700
+      - 100
+      - 100
+      - 100
+      - 100
     - m_Stat: 2
       levels:
-      - 10
-      - 20
-      - 35
-      - 50
-      - 70
-    - m_Stat: 3
-      levels:
-      - 5
-      - 10
-      - 15
-      - 20
-      - 25
-  - m_CharacterClass: 1
-    stats:
-    - m_Stat: 0
-      levels:
-      - 80
-      - 160
-      - 240
-      - 320
-      - 400
-    - m_Stat: 1
-      levels:
+      - 6
       - 8
-      - 16
-      - 24
-      - 32
-      - 40
-    - m_Stat: 3
-      levels:
-      - 5
       - 10
-      - 15
-      - 20
-      - 25
-  - m_CharacterClass: 2
-    stats:
-    - m_Stat: 1
-      levels:
-      - 4
-      - 8
       - 12
-      - 16
-      - 20
+      - 14
+    - m_Stat: 10
+      levels:
+      - 5
+      - 10
+      - 15
+      - 25
+      - 40
+  - m_CharacterClass: 12
+    stats:
     - m_Stat: 0
       levels:
       - 40
@@ -75,12 +52,24 @@ MonoBehaviour:
       - 120
       - 160
       - 200
-    - m_Stat: 3
+    - m_Stat: 1
       levels:
-      - 3
-      - 5
+      - 100
+      - 100
+      - 100
+      - 100
+      - 100
+    - m_Stat: 2
+      levels:
+      - 4
+      - 6
+      - 8
       - 10
-      - 15
-      - 20
-  - m_CharacterClass: 3
-    stats: []
+      - 12
+    - m_Stat: 10
+      levels:
+      - 2
+      - 5
+      - 7
+      - 12
+      - 19

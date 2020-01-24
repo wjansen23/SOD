@@ -134,6 +134,8 @@ namespace RPG.Combat
         private float GetLevelBasedDamage()
         {
             return GetComponent<BaseStats>().GetStatValue(Stat.LevelDamage);
+            //return GetComponent<IBaseStatProvider>().GetStatValue(Stat.LevelDamage);
+
         }
 
         //Called from projectile attack animation.

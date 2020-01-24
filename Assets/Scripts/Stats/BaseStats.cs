@@ -119,11 +119,11 @@ namespace RPG.Stats
             if (xpComp == null) return m_StartLevel;
 
             float currentXP = xpComp.GetExperiencePoints();
-            int maxlevel = m_Progression.GetMaxLevels(Stat.XPToLevel,m_CharacterClass);
+            int maxlevel = m_Progression.GetMaxLevels(Stat.LevelXP,m_CharacterClass);
 
             for (int level = 1;level <= maxlevel; level++)
             {
-                if (m_Progression.GetStat(Stat.XPToLevel, m_CharacterClass, level) > currentXP) return level;
+                if (m_Progression.GetStat(Stat.LevelXP, m_CharacterClass, level) > currentXP) return level;
             }
             return maxlevel+1;
         }

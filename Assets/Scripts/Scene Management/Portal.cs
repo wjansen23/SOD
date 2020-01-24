@@ -29,7 +29,11 @@ namespace RPG.SceneManagement
             //Only let the player cause a transition
             if (other.tag=="Player")
             {
-                StartCoroutine(Transition());
+                //Make sure there is a scene to load
+                if (m_SceneIndexToLoad != -1)
+                {
+                    StartCoroutine(Transition());
+                }
             }
         }
 

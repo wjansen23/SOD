@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Asset Packs\GameDev.tv Assets\Scripts\Utils\LazyValue.cs" />
     <Compile Include="Assets\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\Attributes\EnergyBar.cs" />
     <Compile Include="Assets\Scripts\Attributes\Health.cs" />
     <Compile Include="Assets\Scripts\Attributes\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Attributes\HealthDisplay.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\Scripts\Stats\BaseStats.cs" />
     <Compile Include="Assets\Scripts\Stats\CharacterClass.cs" />
     <Compile Include="Assets\Scripts\Stats\Experience.cs" />
+    <Compile Include="Assets\Scripts\Stats\IBaseStatProvider.cs" />
     <Compile Include="Assets\Scripts\Stats\IModifierProvider.cs" />
     <Compile Include="Assets\Scripts\Stats\LevelDisplay.cs" />
     <Compile Include="Assets\Scripts\Stats\Progression.cs" />

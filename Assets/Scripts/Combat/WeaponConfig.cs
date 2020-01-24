@@ -76,13 +76,13 @@ namespace RPG.Combat
             return hand;
         }
 
-        //Returns weapon damage
+        //Returns damage weapon does.  This is added to a characters base damage
         public float GetDamage()
         {
             return m_WeaponDamage;
         }
 
-        //Returns weapon damage percentage bonus
+        //Returns damage percentage bonus that is applied to the sum of the character base damage and the weapon damage
         public float GetPercentageBonus()
         {
             return m_PercentageBonus;
