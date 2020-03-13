@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Asset Packs\GameDev.tv Assets\Scripts\Utils\LazyValue.cs" />
-    <Compile Include="Assets\Destroyer.cs" />
     <Compile Include="Assets\Scripts\Attributes\EnergyBar.cs" />
     <Compile Include="Assets\Scripts\Attributes\Health.cs" />
     <Compile Include="Assets\Scripts\Attributes\HealthBar.cs" />
@@ -86,12 +85,15 @@
     <Compile Include="Assets\Scripts\Core\FollowCamera.cs" />
     <Compile Include="Assets\Scripts\Core\IAction.cs" />
     <Compile Include="Assets\Scripts\Core\PersistantObjectSpawner.cs" />
+    <Compile Include="Assets\Scripts\Destroyer.cs" />
     <Compile Include="Assets\Scripts\GameMapWall.cs" />
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
     <Compile Include="Assets\Scripts\Saving\SavableEntity.cs" />
     <Compile Include="Assets\Scripts\Saving\SavingSystem.cs" />
     <Compile Include="Assets\Scripts\Saving\SerializableVector3.cs" />
+    <Compile Include="Assets\Scripts\Scene Management\EncounterSpawn.cs" />
+    <Compile Include="Assets\Scripts\Scene Management\EncounterSpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Scene Management\Fader.cs" />
     <Compile Include="Assets\Scripts\Scene Management\Portal.cs" />
     <Compile Include="Assets\Scripts\Scene Management\SavingWrapper.cs" />
@@ -106,6 +108,8 @@
     <Compile Include="Assets\Scripts\Stats\XPDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\DamageText\DamageText.cs" />
     <Compile Include="Assets\Scripts\UI\DamageText\DamageTextSpawner.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerStatusBar.cs" />
+    <Compile Include="Assets\Scripts\UI\SpeechBubbleText.cs" />
     <None Include="Assets\Asset Packs\Animations\README - Usage Rights for these assets 1.txt" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />

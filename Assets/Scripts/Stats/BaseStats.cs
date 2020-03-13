@@ -127,5 +127,15 @@ namespace RPG.Stats
             }
             return maxlevel+1;
         }
+
+        //Return XP for Next Level
+        public float GetXPForNextLevel(int level)
+        {
+            int maxlevel = m_Progression.GetMaxLevels(Stat.LevelXP, m_CharacterClass);
+
+            if (level >= maxlevel){return 10000000000.0f;}
+            if (level <= 0) { return 0; }
+            return m_Progression.GetStat(Stat.LevelXP, m_CharacterClass, level);
+        }
     }
 }
