@@ -112,7 +112,7 @@
     <Compile Include="Assets\Scripts\UI\SpeechBubbleText.cs" />
     <None Include="Assets\Asset Packs\Animations\README - Usage Rights for these assets 1.txt" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
-    <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
+    <None Include="Assets\Asset Packs\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
     <Reference Include="Cinemachine">
       <HintPath>C:/Development/REPOS/RPGS/SOD/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
