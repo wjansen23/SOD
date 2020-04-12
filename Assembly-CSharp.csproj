@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Control\AIController.cs" />
     <Compile Include="Assets\Scripts\Control\CursorType.cs" />
     <Compile Include="Assets\Scripts\Control\IRaycastable.cs" />
+    <Compile Include="Assets\Scripts\Control\NPCController.cs" />
     <Compile Include="Assets\Scripts\Control\PatrolPath.cs" />
     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Core\ActionScheduler.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="Assets\Scripts\Core\IAction.cs" />
     <Compile Include="Assets\Scripts\Core\PersistantObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\Destroyer.cs" />
-    <Compile Include="Assets\Scripts\GameMapWall.cs" />
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
     <Compile Include="Assets\Scripts\Saving\SavableEntity.cs" />
@@ -95,8 +95,10 @@
     <Compile Include="Assets\Scripts\Scene Management\EncounterSpawn.cs" />
     <Compile Include="Assets\Scripts\Scene Management\EncounterSpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Scene Management\Fader.cs" />
+    <Compile Include="Assets\Scripts\Scene Management\GameMapWall.cs" />
     <Compile Include="Assets\Scripts\Scene Management\Portal.cs" />
     <Compile Include="Assets\Scripts\Scene Management\SavingWrapper.cs" />
+    <Compile Include="Assets\Scripts\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Stats\BaseStats.cs" />
     <Compile Include="Assets\Scripts\Stats\CharacterClass.cs" />
     <Compile Include="Assets\Scripts\Stats\Experience.cs" />
@@ -109,7 +111,7 @@
     <Compile Include="Assets\Scripts\UI\DamageText\DamageText.cs" />
     <Compile Include="Assets\Scripts\UI\DamageText\DamageTextSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerStatusBar.cs" />
-    <Compile Include="Assets\Scripts\UI\SpeechBubbleText.cs" />
+    <Compile Include="Assets\Scripts\UI\SpeechBubble\SpeechBubbleText.cs" />
     <None Include="Assets\Asset Packs\Animations\README - Usage Rights for these assets 1.txt" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
     <None Include="Assets\Asset Packs\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
