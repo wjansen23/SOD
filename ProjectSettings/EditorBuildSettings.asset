@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Shadesmere.unity
+    guid: 968db3db9ab909248984bdcd759d7955
+  - enabled: 1
+    path: Assets/Scenes/DarkHollowHills1.unity
+    guid: 41727b0d035bd7a4e99cbf2b03ad9f0a
   m_configObjects: {}
